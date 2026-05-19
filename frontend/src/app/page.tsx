@@ -2,31 +2,40 @@
 
 import { Spotlight } from "@/components/ui/spotlight";
 import {Particles} from "@/components/ui/particles";
+import AuraInput from "@/components/AuraInput";
 
 export default function Home() {
   return (
-    <main className="relative flex h-screen overflow-hidden bg-black">
+    <main className="relative flex min-h-screen overflow-hidden bg-black px-6">
       
+      {/* Particles */}
       <Particles
         className="absolute inset-0"
-        quantity={100}
+        quantity={120}
       />
 
+      {/* Spotlight */}
       <Spotlight
-        className="-top-40 left-0 md:left-60 md:-top-20"
+        className="-top-40 left-0 md:left-40 md:-top-20"
         fill="white"
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center w-full">
+      {/* Main Content */}
+      <div className="relative z-10 flex w-full flex-col items-center justify-center">
         
-        <h1 className="text-7xl font-bold text-white">
+        {/* Heading */}
+        <h1 className="text-center text-7xl font-bold tracking-tight text-white md:text-8xl">
           Aura AI
         </h1>
 
-        <p className="mt-4 text-xl text-neutral-400">
-          Decode human communication instantly.
+        {/* Subtitle */}
+        <p className="mt-6 max-w-2xl text-center text-lg text-neutral-400 md:text-xl">
+          Decode hidden emotions, confidence, persuasion,
+          and communication patterns instantly using AI.
         </p>
 
+        {/* Input Component */}
+        <AuraInput />
       </div>
     </main>
   );
