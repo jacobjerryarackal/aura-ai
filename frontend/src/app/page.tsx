@@ -6,7 +6,7 @@ import AuraInput from "@/components/AuraInput";
 
 export default function Home() {
   return (
-    <main className="relative flex min-h-screen overflow-hidden bg-black px-6">
+    <main className="relative flex min-h-screen overflow-hidden bg-black px-6 py-20">
       
       {/* Particles */}
       <Particles

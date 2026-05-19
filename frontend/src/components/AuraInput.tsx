@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ResultCard from "./ResultCard";
 
 export default function AuraInput() {
   const [text, setText] = useState("");
@@ -191,65 +192,37 @@ export default function AuraInput() {
             className="mt-8 grid gap-6 md:grid-cols-2"
           >
             
-            {/* Card 1 */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <p className="text-sm text-neutral-400">
-                Communication Tone
-              </p>
+            <ResultCard
+  title="Communication Tone"
+  value="Confident"
+  description="Your communication style feels assertive, strategic, and persuasive."
+  accent="from-blue-500 to-cyan-400"
+  delay={0.1}
+/>
 
-              <h2 className="mt-3 text-3xl font-bold text-white">
-                Confident
-              </h2>
+<ResultCard
+  title="Emotional Energy"
+  value="Positive"
+  description="The message conveys optimism, collaboration, and engagement."
+  accent="from-pink-500 to-purple-500"
+  delay={0.2}
+/>
 
-              <p className="mt-2 text-neutral-400">
-                Your communication style feels assertive and persuasive.
-              </p>
-            </div>
+<ResultCard
+  title="Persuasion Level"
+  value="87%"
+  description="Strong emotional and logical influence patterns detected."
+  accent="from-green-400 to-emerald-500"
+  delay={0.3}
+/>
 
-            {/* Card 2 */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <p className="text-sm text-neutral-400">
-                Emotional Energy
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold text-white">
-                Positive
-              </h2>
-
-              <p className="mt-2 text-neutral-400">
-                The message conveys optimism and engagement.
-              </p>
-            </div>
-
-            {/* Card 3 */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <p className="text-sm text-neutral-400">
-                Persuasion Level
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold text-white">
-                87%
-              </h2>
-
-              <p className="mt-2 text-neutral-400">
-                Strong emotional and logical influence detected.
-              </p>
-            </div>
-
-            {/* Card 4 */}
-            <div className="rounded-3xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <p className="text-sm text-neutral-400">
-                Confidence Score
-              </p>
-
-              <h2 className="mt-3 text-3xl font-bold text-white">
-                High
-              </h2>
-
-              <p className="mt-2 text-neutral-400">
-                The writing demonstrates certainty and authority.
-              </p>
-            </div>
+<ResultCard
+  title="Confidence Score"
+  value="High"
+  description="The writing demonstrates clarity, certainty, and authority."
+  accent="from-orange-400 to-yellow-500"
+  delay={0.4}
+/>
           </motion.div>
         )}
       </AnimatePresence>
