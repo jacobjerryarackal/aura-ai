@@ -12,6 +12,24 @@ export default function AuraInput() {
   const [showResults, setShowResults] = useState(false);
   const [analysis, setAnalysis] = useState<any>(null);
 
+  const getAuraGradient = () => {
+  const emotion = analysis?.emotion?.toLowerCase();
+
+  if (emotion?.includes("positive")) {
+    return "from-cyan-500/20 to-blue-500/20";
+  }
+
+  if (emotion?.includes("aggressive")) {
+    return "from-red-500/20 to-orange-500/20";
+  }
+
+  if (emotion?.includes("calm")) {
+    return "from-purple-500/20 to-indigo-500/20";
+  }
+
+  return "from-white/10 to-white/5";
+};
+
   const handleAnalyze = async () => {
     if (!text.trim()) return;
 
@@ -19,7 +37,7 @@ export default function AuraInput() {
     setShowResults(false);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/analyze`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
