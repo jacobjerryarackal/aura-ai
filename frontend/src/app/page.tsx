@@ -1,11 +1,17 @@
 "use client";
 
 import { Spotlight } from "@/components/ui/spotlight";
+import {Particles} from "@/components/ui/particles";
 
 export default function Home() {
   return (
     <main className="relative flex h-screen overflow-hidden bg-black">
       
+      <Particles
+        className="absolute inset-0"
+        quantity={100}
+      />
+
       <Spotlight
         className="-top-40 left-0 md:left-60 md:-top-20"
         fill="white"
