@@ -3,6 +3,7 @@
 import { Spotlight } from "@/components/ui/spotlight";
 import {Particles} from "@/components/ui/particles";
 import AuraInput from "@/components/AuraInput";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
@@ -21,10 +22,23 @@ export default function Home() {
       />
 
       {/* Main Content */}
-      <div className="relative z-10 flex w-full flex-col items-center justify-center">
+      <motion.div
+        initial={{
+          opacity: 0,
+          y: 30,
+        }}
+        animate={{
+          opacity: 1,
+          y: 0,
+        }}
+        transition={{
+          duration: 1,
+        }}
+        className="relative z-10 flex w-full flex-col items-center justify-center"
+      >
         
         {/* Heading */}
-        <h1 className="text-center text-7xl font-bold tracking-tight text-white md:text-8xl">
+        <h1 className="text-center text-7xl font-bold tracking-tight text-white md:text-6xl md:text-8xl">
           Aura AI
         </h1>
 
@@ -36,7 +50,7 @@ export default function Home() {
 
         {/* Input Component */}
         <AuraInput />
-      </div>
+      </motion.div>
     </main>
   );
 }
