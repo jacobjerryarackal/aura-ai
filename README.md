@@ -13,9 +13,6 @@
 
 # HERO SECTION
 
-```md id="mr3m5x"
-# Aura AI
-
 An immersive AI-powered communication intelligence platform that analyzes emotional tone, persuasion, confidence, and personality signals in real-time using LLMs and dynamic visual intelligence.
 
 Live Demo:
@@ -27,8 +24,6 @@ Backend: https://aura-ai-glrp.onrender.com
 
 # SCREENSHOT SECTION
 
-```md id="tkp3fu"
-## Preview
 
 ![Aura AI Screenshot](assets/screenshots/home.png)
 ![Aura AI Screenshot](assets/screenshots/thinking.png)
@@ -39,9 +34,6 @@ Backend: https://aura-ai-glrp.onrender.com
 ---
 
 # FEATURES SECTION
-
-```md id="2v2mn9"
-## Features
 
 - Real-time AI communication analysis
 - Dynamic radar chart visualization
@@ -59,11 +51,6 @@ Backend: https://aura-ai-glrp.onrender.com
 
 # ARCHITECTURE SECTION
 
-Use:
-
-````md id="3hmvtt"
-## Architecture
-
 ```txt
 Frontend (Next.js)
         ↓
@@ -78,9 +65,6 @@ Llama 3.3 70B
 ---
 
 # TECH STACK
-
-```md id="c4y7m0"
-## Tech Stack
 
 ### Frontend
 - Next.js 15
@@ -106,9 +90,6 @@ Llama 3.3 70B
 
 # FOLDER STRUCTURE
 
-````md id="3n8ewk"
-## Project Structure
-
 ```txt
 aura-ai/
 ├── frontend/
@@ -121,9 +102,6 @@ aura-ai/
 ---
 
 # LOCAL SETUP
-
-````md id="tx96l7"
-## Local Setup
 
 ### Frontend
 
@@ -152,9 +130,6 @@ uvicorn app:app --reload
 
 # ENV VARIABLES
 
-````md id="u3os2v"
-## Environment Variables
-
 Create `.env` inside backend:
 
 ```env
@@ -177,9 +152,6 @@ It shows:
 ---
 
 # GOOD TEST CASE
-
-```md id="eb21ga"
-## Good Test Case
 
 ### Input
 "We’re excited to move forward with this collaboration and believe it will create long-term strategic value for both organizations."
@@ -206,9 +178,6 @@ A “bad test case” in AI engineering means:
 
 Example:
 
-```md id="mjlwm3"
-## Bad Test Case
-
 ### Input
 "Okay."
 
@@ -216,7 +185,6 @@ Example:
 The text is too short and lacks emotional, contextual, or semantic depth. AI analysis may become inconsistent or low-confidence because insufficient signal exists for accurate communication profiling.
 ```
 
-This is ACTUAL AI engineering thinking.
 
 ---
 
