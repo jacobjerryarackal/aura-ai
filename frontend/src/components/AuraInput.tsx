@@ -237,7 +237,9 @@ export default function AuraInput() {
           className="mt-8 grid gap-6 md:grid-cols-2"
         >
           <AuraRadar analysis={analysis} />
-          <ConfidenceRing />
+          <ConfidenceRing
+            score={analysis?.confidence_score || 0}
+          />
         </motion.div>
       )}
 

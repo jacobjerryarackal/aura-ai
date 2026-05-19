@@ -2,7 +2,13 @@
 
 import { motion } from "framer-motion";
 
-export default function ConfidenceRing() {
+interface ConfidenceRingProps {
+  score: number;
+}
+
+export default function ConfidenceRing({
+  score,
+}: ConfidenceRingProps) {
   return (
     <div
       className="
@@ -53,7 +59,7 @@ export default function ConfidenceRing() {
         {/* Center */}
         <div className="absolute flex flex-col items-center">
           <h2 className="text-5xl font-bold text-white">
-            92%
+            {score}%
           </h2>
 
           <p className="mt-2 text-sm text-neutral-400">
