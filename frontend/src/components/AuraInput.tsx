@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import ResultCard from "./ResultCard";
+import AuraRadar from "./AuraRadar";
+import ConfidenceRing from "./ConfidenceRing";
 
 export default function AuraInput() {
   const [text, setText] = useState("");
@@ -193,39 +195,81 @@ export default function AuraInput() {
           >
             
             <ResultCard
-  title="Communication Tone"
-  value="Confident"
-  description="Your communication style feels assertive, strategic, and persuasive."
-  accent="from-blue-500 to-cyan-400"
-  delay={0.1}
-/>
+              title="Communication Tone"
+              value="Confident"
+              description="Your communication style feels assertive, strategic, and persuasive."
+              accent="from-blue-500 to-cyan-400"
+              delay={0.1}
+            />
 
-<ResultCard
-  title="Emotional Energy"
-  value="Positive"
-  description="The message conveys optimism, collaboration, and engagement."
-  accent="from-pink-500 to-purple-500"
-  delay={0.2}
-/>
+            <ResultCard
+              title="Emotional Energy"
+              value="Positive"
+              description="The message conveys optimism, collaboration, and engagement."
+              accent="from-pink-500 to-purple-500"
+              delay={0.2}
+            />
 
-<ResultCard
-  title="Persuasion Level"
-  value="87%"
-  description="Strong emotional and logical influence patterns detected."
-  accent="from-green-400 to-emerald-500"
-  delay={0.3}
-/>
+            <ResultCard
+              title="Persuasion Level"
+              value="87%"
+              description="Strong emotional and logical influence patterns detected."
+              accent="from-green-400 to-emerald-500"
+              delay={0.3}
+            />
 
-<ResultCard
-  title="Confidence Score"
-  value="High"
-  description="The writing demonstrates clarity, certainty, and authority."
-  accent="from-orange-400 to-yellow-500"
-  delay={0.4}
-/>
+            <ResultCard
+              title="Confidence Score"
+              value="High"
+              description="The writing demonstrates clarity, certainty, and authority."
+              accent="from-orange-400 to-yellow-500"
+              delay={0.4}
+            />
           </motion.div>
         )}
       </AnimatePresence>
+
+      {showResults && (
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="mt-8 grid gap-6 md:grid-cols-2"
+        >
+          <AuraRadar />
+          <ConfidenceRing />
+        </motion.div>
+      )}
+
+      {showResults && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="
+              mt-8
+              rounded-3xl
+              border
+              border-white/10
+              bg-white/5
+              p-8
+              backdrop-blur-xl
+            "
+          >
+            <p className="text-sm uppercase tracking-wide text-neutral-400">
+              AI Interpretation
+            </p>
+
+            <h2 className="mt-4 text-3xl font-bold text-white">
+              Strategic & Persuasive Communication Detected
+            </h2>
+
+            <p className="mt-6 max-w-4xl leading-relaxed text-neutral-300">
+              The message demonstrates high confidence,
+              future-oriented thinking, and collaborative intent.
+              Strong persuasive patterns suggest leadership-driven
+              communication with positive emotional framing.
+            </p>
+          </motion.div>
+        )}    
     </div>
   );
 }
