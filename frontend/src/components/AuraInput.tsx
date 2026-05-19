@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import ResultCard from "./ResultCard";
 import AuraRadar from "./AuraRadar";
 import ConfidenceRing from "./ConfidenceRing";
+import TypingText from "./TypingText";
 
 export default function AuraInput() {
   const [text, setText] = useState("");
@@ -283,12 +284,11 @@ export default function AuraInput() {
               Strategic & Persuasive Communication Detected
             </h2>
 
-            <p className="mt-6 max-w-4xl leading-relaxed text-neutral-300">
-              The message demonstrates high confidence,
-              future-oriented thinking, and collaborative intent.
-              Strong persuasive patterns suggest leadership-driven
-              communication with positive emotional framing.
-            </p>
+            <div className="mt-6 max-w-4xl">
+              <TypingText
+                text={analysis?.summary || ""}
+              />
+            </div>
           </motion.div>
         )}    
     </div>
