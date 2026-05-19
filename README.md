@@ -1,16 +1,3 @@
-````md
-# Aura AI
-
-An immersive AI-powered communication intelligence platform that analyzes emotional tone, persuasion, confidence, and personality signals in real-time using Large Language Models (LLMs) and dynamic visual intelligence.
-
-The system follows a reflex-agent architecture:
-
-```txt
-Input → Immediate Analysis → Output
-````
-
-The agent does not maintain memory, planning, or long-term reasoning.
-Instead, it reacts instantly to user input and generates structured communication analysis in real time.
 
 ---
 
@@ -144,7 +131,7 @@ aura-ai/
 ## Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/aura-ai.git
+git clone https://github.com/jacobjerryarackal/aura-ai.git
 ```
 
 ---
@@ -277,5 +264,3 @@ This project helped develop practical understanding of:
 
 ---
 
-
-```
