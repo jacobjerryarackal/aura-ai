@@ -36,19 +36,24 @@ def analyze_message(data: MessageRequest):
     prompt = f"""
 You are an advanced communication analysis AI.
 
-Analyze the following message and return ONLY valid JSON.
+Analyze the following message.
 
 Message:
 {data.text}
 
-Return this exact structure:
+Return ONLY valid JSON.
+
+The JSON must follow this exact structure:
 
 {{
-  "tone": "",
-  "emotion": "",
-  "confidence_score": "",
-  "persuasion_level": "",
-  "summary": ""
+  "tone": "Confident",
+  "emotion": "Positive",
+  "confidence_score": 92,
+  "persuasion_level": 87,
+  "empathy_score": 74,
+  "professionalism_score": 90,
+  "positivity_score": 81,
+  "summary": "Short AI interpretation"
 }}
 """
 
