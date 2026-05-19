@@ -14,11 +14,28 @@ export default function AuraInput() {
     setLoading(true);
     setShowResults(false);
 
-    // Fake AI delay
-    setTimeout(() => {
+    try {
+      const response = await fetch("http://127.0.0.1:8000/analyze", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          text,
+        }),
+      });
+
+      const data = await response.json();
+
+      console.log(data);
+
       setLoading(false);
       setShowResults(true);
-    }, 2500);
+
+    } catch (error) {
+      console.error(error);
+      setLoading(false);
+    }
   };
 
   return (
