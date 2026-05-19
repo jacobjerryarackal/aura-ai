@@ -41,9 +41,12 @@ Analyze the following message.
 Message:
 {data.text}
 
+IMPORTANT:
 Return ONLY valid JSON.
+Do not include markdown.
+Do not include explanations.
 
-The JSON must follow this exact structure:
+Return this exact structure:
 
 {{
   "tone": "Confident",
@@ -65,20 +68,38 @@ The JSON must follow this exact structure:
                 "content": prompt
             }
         ],
-        temperature=0.7,
+        temperature=0.3,
     )
 
     response_text = completion.choices[0].message.content
 
+    print("\nRAW AI RESPONSE:\n")
+    print(response_text)
+
     try:
-        parsed = json.loads(response_text)
+        # Clean markdown if exists
+        cleaned = (
+            response_text
+            .replace("```json", "")
+            .replace("```", "")
+            .strip()
+        )
+
+        parsed = json.loads(cleaned)
+
         return parsed
 
-    except:
+    except Exception as e:
+        print("\nJSON ERROR:\n")
+        print(e)
+
         return {
-            "tone": "Unknown",
+            "tone": "Analysis Error",
             "emotion": "Unknown",
-            "confidence_score": "Unknown",
-            "persuasion_level": "Unknown",
+            "confidence_score": 0,
+            "persuasion_level": 0,
+            "empathy_score": 0,
+            "professionalism_score": 0,
+            "positivity_score": 0,
             "summary": response_text
         }
