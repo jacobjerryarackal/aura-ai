@@ -10,6 +10,7 @@ export default function AuraInput() {
   const [text, setText] = useState("");
   const [loading, setLoading] = useState(false);
   const [showResults, setShowResults] = useState(false);
+  const [analysis, setAnalysis] = useState<any>(null);
 
   const handleAnalyze = async () => {
     if (!text.trim()) return;
@@ -30,7 +31,7 @@ export default function AuraInput() {
 
       const data = await response.json();
 
-      console.log(data);
+      setAnalysis(data);
 
       setLoading(false);
       setShowResults(true);
@@ -196,7 +197,7 @@ export default function AuraInput() {
             
             <ResultCard
               title="Communication Tone"
-              value="Confident"
+              value={analysis?.tone}
               description="Your communication style feels assertive, strategic, and persuasive."
               accent="from-blue-500 to-cyan-400"
               delay={0.1}
@@ -204,7 +205,7 @@ export default function AuraInput() {
 
             <ResultCard
               title="Emotional Energy"
-              value="Positive"
+              value={analysis?.emotion}
               description="The message conveys optimism, collaboration, and engagement."
               accent="from-pink-500 to-purple-500"
               delay={0.2}
@@ -212,7 +213,7 @@ export default function AuraInput() {
 
             <ResultCard
               title="Persuasion Level"
-              value="87%"
+              value={`${analysis?.persuasion_level}%`}
               description="Strong emotional and logical influence patterns detected."
               accent="from-green-400 to-emerald-500"
               delay={0.3}
@@ -220,7 +221,7 @@ export default function AuraInput() {
 
             <ResultCard
               title="Confidence Score"
-              value="High"
+              value={`${analysis?.confidence_score}%`}
               description="The writing demonstrates clarity, certainty, and authority."
               accent="from-orange-400 to-yellow-500"
               delay={0.4}
@@ -235,7 +236,7 @@ export default function AuraInput() {
           animate={{ opacity: 1, y: 0 }}
           className="mt-8 grid gap-6 md:grid-cols-2"
         >
-          <AuraRadar />
+          <AuraRadar analysis={analysis} />
           <ConfidenceRing />
         </motion.div>
       )}

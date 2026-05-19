@@ -8,30 +8,36 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    subject: "Confidence",
-    A: 92,
-  },
-  {
-    subject: "Persuasion",
-    A: 87,
-  },
-  {
-    subject: "Empathy",
-    A: 74,
-  },
-  {
-    subject: "Professionalism",
-    A: 90,
-  },
-  {
-    subject: "Positivity",
-    A: 81,
-  },
-];
+interface AuraRadarProps {
+  analysis: any;
+}
 
-export default function AuraRadar() {
+export default function AuraRadar({
+  analysis,
+}: AuraRadarProps) {
+
+  const data = [
+    {
+      subject: "Confidence",
+      A: analysis?.confidence_score || 0,
+    },
+    {
+      subject: "Persuasion",
+      A: analysis?.persuasion_level || 0,
+    },
+    {
+      subject: "Empathy",
+      A: analysis?.empathy_score || 0,
+    },
+    {
+      subject: "Professionalism",
+      A: analysis?.professionalism_score || 0,
+    },
+    {
+      subject: "Positivity",
+      A: analysis?.positivity_score || 0,
+    },
+  ];
   return (
     <div
       className="
