@@ -13,3 +13,10 @@ backend/__pycache__
 # OS
 .DS_Store
 Thumbs.db
+
+venv
+__pycache__
+
+node_modules
+.next
+.env
